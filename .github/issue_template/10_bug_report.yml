@@ -1,0 +1,60 @@
+name: "🐞 Bug Report"
+description: "Report a bug or unexpected behavior"
+title: "[BUG] <short description>"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Thanks for helping improve the project!
+        Please describe the issue in detail.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: What is the bug, and what did you expect instead?
+      placeholder: "The app crashes when I click…"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to '...'
+        2. Click '...'
+        3. Scroll down to '...'
+        4. Error appears
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        - OS:
+        - App version:
+        - Browser (if web):
+        - Device (if mobile):
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Error output
+      description: Attach logs if available
+      render: bash
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Agreement
+      options:
+        - label: "I agree to follow the Code of Conduct"
+          required: true

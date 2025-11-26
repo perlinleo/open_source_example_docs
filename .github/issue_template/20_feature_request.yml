@@ -1,0 +1,51 @@
+name: "✨ Feature Request"
+description: "Suggest an idea or enhancement"
+title: "[FEATURE] <short description>"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Thank you for suggesting an improvement!
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / Motivation
+      description: What problem does this feature solve?
+      placeholder: "It's difficult to do X because…"
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe your idea clearly
+      placeholder: "Add an option to…"
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      placeholder: "I also thought about…"
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
+      description: Screenshots, links, or references
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Agreement
+      options:
+        - label: "I agree to follow the Code of Conduct"
+          required: true
