@@ -1,0 +1,10 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: "💬 Ask a Question"
+    url: "https://github.com/<your-org>/<your-repo>/discussions"
+    about: "For general questions or help, please use Discussions."
+
+  - name: "📄 Security Policy"
+    url: "https://github.com/<your-org>/<your-repo>/blob/main/.github/SECURITY.md"
+    about: "Please read our Security Policy before reporting vulnerabilities."
