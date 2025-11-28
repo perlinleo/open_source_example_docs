@@ -1,6 +1,0 @@
-blank_issues_enabled: false
-
-contact_links:
-  - name: "📄 Security Policy"
-    url: "https://github.com/<your-org>/<your-repo>/blob/main/.github/SECURITY.md"
-    about: "Please read our Security Policy before reporting vulnerabilities."
