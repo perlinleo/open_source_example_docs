@@ -1,51 +1,57 @@
-name: "✨ Feature Request"
-description: "Suggest an idea or enhancement"
-title: "[FEATURE] <short description>"
+name: Feature Request
+description: Suggest an idea or enhancement for the Fastlane plugin
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        ### Thank you for suggesting an improvement!
+        Thanks for your interest in improving this Fastlane plugin!
+        Please provide context so we can understand your feature request.
 
   - type: textarea
-    id: problem
+    id: description
     attributes:
-      label: Problem / Motivation
-      description: What problem does this feature solve?
-      placeholder: "It's difficult to do X because…"
+      label: Feature description
+      description: What feature would you like to see added?
+      placeholder: "Describe the new behavior or improvement"
     validations:
       required: true
 
   - type: textarea
-    id: solution
+    id: rationale
     attributes:
-      label: Proposed solution
-      description: Describe your idea clearly
-      placeholder: "Add an option to…"
+      label: Why is this needed?
+      description: Explain the problem this feature solves or why it's useful.
+      placeholder: "Why do you need this?"
     validations:
       required: true
 
   - type: textarea
-    id: alternatives
+    id: implementation
     attributes:
-      label: Alternatives considered
-      placeholder: "I also thought about…"
+      label: Proposed implementation
+      description: If you have an idea for how this could be implemented, describe it here.
+      placeholder: "Optional: how you would implement it"
     validations:
       required: false
 
   - type: textarea
-    id: notes
+    id: examples
+    attributes:
+      label: Example Fastlane usage (optional)
+      description: Show how the feature might look when used in a Fastlane lane.
+      render: ruby
+      placeholder: |
+        dsym_upload(
+          new_option: true
+        )
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
     attributes:
       label: Additional context
-      description: Screenshots, links, or references
+      description: Add any context or screenshots related to the feature request.
     validations:
       required: false
-
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Agreement
-      options:
-        - label: "I agree to follow the Code of Conduct"
-          required: true

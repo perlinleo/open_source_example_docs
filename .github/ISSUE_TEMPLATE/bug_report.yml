@@ -1,60 +1,116 @@
-name: "🐞 Bug Report"
-description: "Report a bug or unexpected behavior"
-title: "[BUG] <short description>"
+name: Bug Report
+description: Report a problem with the Fastlane plugin
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        ### Thanks for helping improve the project!
-        Please describe the issue in detail.
+        Thank you for helping improve this Fastlane plugin!  
+        Please provide as much detail as possible so we can reproduce the issue.
 
   - type: textarea
-    id: summary
+    id: bug-description
     attributes:
-      label: What happened?
-      description: What is the bug, and what did you expect instead?
-      placeholder: "The app crashes when I click…"
+      label: Describe the bug
+      description: A clear and concise description of the issue.
+      placeholder: "What happened?"
     validations:
       required: true
 
   - type: textarea
-    id: steps
+    id: reproduction-steps
     attributes:
-      label: Steps to reproduce
+      label: To Reproduce
+      description: |
+        Provide exact steps to reproduce the issue.
+        Include your Fastlane lane and plugin configuration if possible.
       placeholder: |
-        1. Go to '...'
-        2. Click '...'
-        3. Scroll down to '...'
-        4. Error appears
+        1. Add plugin config
+        2. Run 'bundle exec fastlane ...'
+        3. Observe error
     validations:
       required: true
 
   - type: textarea
-    id: environment
+    id: expected
     attributes:
-      label: Environment
-      placeholder: |
-        - OS:
-        - App version:
-        - Browser (if web):
-        - Device (if mobile):
+      label: Expected behavior
+      description: What did you expect to happen?
     validations:
-      required: false
+      required: true
 
   - type: textarea
     id: logs
     attributes:
-      label: Logs / Error output
-      description: Attach logs if available
-      render: bash
+      label: Relevant Fastlane logs
+      description: |
+        Please paste logs from Fastlane (strip any secrets).
+        Using `--capture_output` or `--verbose` is helpful.
+      render: shell
+      placeholder: |
+        bundle exec fastlane <lane> --verbose
     validations:
       required: false
 
-  - type: checkboxes
-    id: terms
+  - type: textarea
+    id: plugin-config
     attributes:
-      label: Agreement
-      options:
-        - label: "I agree to follow the Code of Conduct"
-          required: true
+      label: Plugin configuration
+      description: Action call / plugin parameters used.
+      render: ruby
+      placeholder: |
+        dsym_upload(
+          client_id: "...",
+          dsym_path: "...",
+          proxy: "...",
+        )
+    validations:
+      required: false
+
+  - type: input
+    id: fastlane-version
+    attributes:
+      label: Fastlane version
+      placeholder: "fastlane --version"
+    validations:
+      required: true
+
+  - type: input
+    id: ruby-version
+    attributes:
+      label: Ruby version
+      placeholder: "ruby --version"
+    validations:
+      required: true
+
+  - type: input
+    id: bundler-version
+    attributes:
+      label: Bundler version
+      placeholder: "bundler --version"
+    validations:
+      required: false
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      placeholder: "fastlane-plugin-yourplugin version"
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      placeholder: "macOS 14.4, Ubuntu 22.04, etc."
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Anything else that might help (proxy, CI, network restrictions, etc.)
+    validations:
+      required: false
